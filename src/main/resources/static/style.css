@@ -1,0 +1,28 @@
+@font-face {
+    font-family: Proxima Nova;
+    src: url(pn.otf);
+}
+* {
+    font-family: Proxima Nova;
+    background: #2a2826;
+    color: #9C9C9C;
+    margin: 0;
+    padding: 0;
+}
+body, html {
+    height: 100%;
+
+}
+#main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-size: 1.5em;
+
+}
+#input {
+    border: none;
+    outline:none;
+    font-size: 1.5em;
+}
