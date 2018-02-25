@@ -2,22 +2,22 @@ PRAGMA foreign_keys=on;
 
 CREATE TABLE Students (
 	id integer PRIMARY KEY AUTOINCREMENT,
-	FirstName string,
-	LastName string,
-	PatronymicName string,
-	MainStudyGroup string
+	FirstName text,
+	LastName text,
+	PatronymicName text,
+	MainStudyGroup text
 );
 
 CREATE TABLE Teachers (
 	id integer PRIMARY KEY AUTOINCREMENT,
-	FirstName string,
-	LastName string,
-	PatronymicName string
+	FirstName text,
+	LastName text,
+	PatronymicName text
 );
 
 CREATE TABLE CoursesCatalog (
 	id integer PRIMARY KEY AUTOINCREMENT,
-	NameCourse string,
+	NameCourse text,
 	NameDepartment integer,
 	StartTime datetime,
 	FinishTime datetime,
@@ -36,8 +36,8 @@ CREATE TABLE CoursesTeachersLinks (
 
 CREATE TABLE ProgramUsers (
 	id integer PRIMARY KEY AUTOINCREMENT,
-	login string,
-	pass string
+	login text,
+	pass text
 );
 
 CREATE TABLE PreliminaryRequirements (
@@ -50,7 +50,7 @@ CREATE TABLE PreliminaryRequirements (
 
 CREATE TABLE PaidGroups (
 	id integer PRIMARY KEY AUTOINCREMENT,
-	NameGroup string,
+	NameGroup text,
 	StudentId integer,
 	Year integer,
 	CourseCatalogId integer,
@@ -60,7 +60,7 @@ CREATE TABLE PaidGroups (
 
 CREATE TABLE Departments (
 	id integer PRIMARY KEY AUTOINCREMENT,
-	NameDepartment string
+	NameDepartment text
 );
 
 
