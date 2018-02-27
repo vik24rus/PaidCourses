@@ -1,4 +1,4 @@
-package app;
+package app.domain;
 
 public class ProgramUsers {
 }
