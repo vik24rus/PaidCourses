@@ -1,5 +1,5 @@
 package app;
-
+import app.utils.Path;
 import com.google.common.hash.Hashing;
 import freemarker.cache.ClassTemplateLoader;
 import freemarker.template.Configuration;
@@ -16,34 +16,37 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import static spark.debug.DebugScreen.*;
 
-public class Application { //port 4567 default
+public class Application {
     private Logger log = LoggerFactory.getLogger(Application.class); //log.debug("..."); 
                                                                     //log.info("Some object: {}", object);
                                                                     //log.error("Error during some job!!", e);
     public static void main(String[] args) {
-        ConcurrentHashMap<String, String> urls = new ConcurrentHashMap<String, String>();
+
         
-        enableDebugScreen();
-        port(8087);
+
         
         FreeMarkerEngine freeMarkerEngine = new FreeMarkerEngine();
         Configuration freeMarkerConfiguration = new Configuration();
         freeMarkerConfiguration.setTemplateLoader(new ClassTemplateLoader(Application.class, "/templates/"));
         freeMarkerEngine.setConfiguration(freeMarkerConfiguration);
-        
+
+        port(4567);
         staticFileLocation("/static");
         staticFiles.expireTime(600L);
-       
+        enableDebugScreen();
+
+        // Set up routes
+        get(Path.Web.INDEX,          IndexController.serveIdadndexPage);
 //        get("/hello/:name", (request, response) -> {  // пример как достать :name через request.params(":name");
 //        return "Hello: " + request.params(":name");
 //        });
 //        customize 404 TODO :)
 //        
-        get("/", (request, response) -> {  //simple without html
-        Map<String, Object> model = new HashMap<>();
-        model.put("name", "Freemarker");
-        return freeMarkerEngine.render(new ModelAndView(model, "main.ftl"));
-        });
+//        get("/", (request, response) -> {  //simple without html
+//        Map<String, Object> model = new HashMap<>();
+//        model.put("name", "Freemarker");
+//        return freeMarkerEngine.render(new ModelAndView(model, "main.ftl"));
+//        });
         
 
 //        get("/shortener", (request, response) -> {

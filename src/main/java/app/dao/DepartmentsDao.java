@@ -6,21 +6,26 @@ import java.util.List;
 
 public interface DepartmentsDao {
 
-    Author getById(long id);
+    //показать всех
+    //добавить
+    //удалить (по ид или по названию?)
+    //отредактировать (по ид или по названию?)
+    //TODO нужно смотреть какие методы реализованы в DAO  у других
+    //Departments getById(long id);
 
 
-    void insert(Author author);
+    //void insert(Departments author);
 
 
-    List<Author> getAll(); //TODO как использовать списки в dao?!
+    //List<Departments> getAll(); //TODO как использовать списки в dao?!
 
 
-    void update(Author author);
+    //void update(Departments author);
 
 
-    void deleteById(long id);
+    //void deleteById(long id);
 
 
-    void deleteAll();
+    //void deleteAll();
 
 }
