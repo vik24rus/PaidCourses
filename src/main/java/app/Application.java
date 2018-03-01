@@ -39,6 +39,7 @@ public class Application {
         before("*",                  Filters.addTrailingSlashes);
         //before("*",                  Filters.handleLocaleChange);
         get(Path.Web.INDEX,                IndexController.serveIndexPage);
+        get("*",                     ViewUtil.notFound);
         //Set up after-filters (called after each get/post)
         //after("*",                   Filters.addGzipHeader);
 

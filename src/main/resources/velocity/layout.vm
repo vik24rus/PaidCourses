@@ -1,7 +1,7 @@
 #macro(mainLayout)
 <html>
 <head>
-    <title>$msg.get("COMMON_TITLE")</title>
+##     <title>$msg.get("COMMON_TITLE")</title>
     <link rel="stylesheet" href="/main.css">
     <link rel="icon" href="/favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,7 +9,7 @@
 <body>
 <header>
     <nav>
-        <a href="$WebPath.getINDEX()"><img id="logo" src="/img/logo.png" alt="Spark Library"></a>
+##        <a href="$WebPath.getINDEX()"><img id="logo" src="/img/logo.png" alt="Spark Library"></a>
         <ul id="chooseLanguage">
             <form>
                 <li>
@@ -21,15 +21,15 @@
             </form>
         </ul>
         <ul id="menu">
-            <li><a href="$WebPath.getBOOKS()">$msg.get("COMMON_NAV_ALLBOOKS")</a></li>
+##            <li><a href="$WebPath.getBOOKS()">$msg.get("COMMON_NAV_ALLBOOKS")</a></li>
             #if($currentUser)
                 <li>
                     <form method="post" action="$WebPath.getLOGOUT()">
-                        <button id="logout">$msg.get("COMMON_NAV_LOGOUT")</button>
+##                        <button id="logout">$msg.get("COMMON_NAV_LOGOUT")</button>
                     </form>
                 </li>
             #else
-                <li><a href="$WebPath.getLOGIN()"">$msg.get("COMMON_NAV_LOGIN")</a></li>
+##                <li><a href="$WebPath.getLOGIN()"">$msg.get("COMMON_NAV_LOGIN")</a></li>
             #end
         </ul>
     </nav>
@@ -40,7 +40,7 @@
     </div>
 </main>
 <footer>
-    $msg.get("COMMON_FOOTER_TEXT")
+##    $msg.get("COMMON_FOOTER_TEXT")
 </footer>
 </body>
 </html>
