@@ -1,5 +1,5 @@
 package app;
-import app.utils.Path;
+import app.utils.*;
 import com.google.common.hash.Hashing;
 import freemarker.cache.ClassTemplateLoader;
 import freemarker.template.Configuration;
@@ -15,7 +15,7 @@ import static spark.Spark.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import static spark.debug.DebugScreen.*;
-
+import app.controllers.*;
 public class Application {
     private Logger log = LoggerFactory.getLogger(Application.class); //log.debug("..."); 
                                                                     //log.info("Some object: {}", object);
@@ -25,22 +25,28 @@ public class Application {
         
 
         
-        FreeMarkerEngine freeMarkerEngine = new FreeMarkerEngine();
-        Configuration freeMarkerConfiguration = new Configuration();
-        freeMarkerConfiguration.setTemplateLoader(new ClassTemplateLoader(Application.class, "/templates/"));
-        freeMarkerEngine.setConfiguration(freeMarkerConfiguration);
+        //FreeMarkerEngine freeMarkerEngine = new FreeMarkerEngine();
+        //Configuration freeMarkerConfiguration = new Configuration();
+        //freeMarkerConfiguration.setTemplateLoader(new ClassTemplateLoader(Application.class, "/templates/"));
+        //freeMarkerEngine.setConfiguration(freeMarkerConfiguration);
 
         port(4567);
-        staticFileLocation("/static");
+        staticFileLocation("/public");
         staticFiles.expireTime(600L);
         enableDebugScreen();
 
-        // Set up routes
-        get(Path.Web.INDEX,          IndexController.serveIdadndexPage);
+        // Set up before-filters (called before each get/post)
+        before("*",                  Filters.addTrailingSlashes);
+        //before("*",                  Filters.handleLocaleChange);
+        get(Path.Web.INDEX,                IndexController.serveIndexPage);
+        //Set up after-filters (called after each get/post)
+        //after("*",                   Filters.addGzipHeader);
+
+
 //        get("/hello/:name", (request, response) -> {  // пример как достать :name через request.params(":name");
 //        return "Hello: " + request.params(":name");
 //        });
-//        customize 404 TODO :)
+
 //        
 //        get("/", (request, response) -> {  //simple without html
 //        Map<String, Object> model = new HashMap<>();

@@ -17,6 +17,6 @@ public class Path {
 //        public final static String LOGIN = "/velocity/login/login.vm";
 //        public final static String BOOKS_ALL = "/velocity/book/all.vm";
 //        public static final String BOOKS_ONE = "/velocity/book/one.vm";
-//        public static final String NOT_FOUND = "/velocity/notFound.vm";
+        public static final String NOT_FOUND = "/velocity/notFound.vm";
     }
 }
