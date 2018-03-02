@@ -6,7 +6,7 @@
 </head>
 <body>
 <div id="main" style="text-align: center">
-   сука
+ not found ${url}
 </div>
 </body>
 </html>

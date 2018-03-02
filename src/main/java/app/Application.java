@@ -15,7 +15,7 @@ public class Application {
         staticFiles.expireTime(600L);
         enableDebugScreen();
         // Set up before-filters (called before each get/post)
-        //before("*",                  Filters.addTrailingSlashes);
+        before("*",                  Filters.addTrailingSlashes);
         //before("*",                  Filters.handleLocaleChange);
         get(Path.Web.INDEX,                IndexController.serveIndexPage);
         get("*",                     ViewUtil.notFound);
