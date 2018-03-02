@@ -1,7 +1,12 @@
-<html>
+<!DOCTYPE html>
+<html lang="en" style="height:100%;">
 <head>
+    <meta charset='utf-8'>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Hello, ${name}!</h1>
+<div id="main" style="text-align: center">
+   сука
+</div>
 </body>
 </html>

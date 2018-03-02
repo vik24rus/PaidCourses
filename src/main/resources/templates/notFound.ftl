@@ -6,7 +6,7 @@
 </head>
 <body>
 <div id="main" style="text-align: center">
-    ${url}
+   сука
 </div>
 </body>
 </html>
